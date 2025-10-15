@@ -15,4 +15,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD ["sh", "-c", "python manage.py migrate && gunicorn bookmanager.wsgi:application --bind 0.0.0.0:8080"]
+CMD ["sh", "-c", "python manage.py migrate && gunicorn bookmanager.wsgi:application --bind 0.0.0.0:$PORT"]
