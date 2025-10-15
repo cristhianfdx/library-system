@@ -9,6 +9,8 @@ services:
         python manage.py runserver 0.0.0.0:8080"
     volumes:
       - .:/app
+    environment:
+      - PORT=8080
     ports:
       - "8080:8080"
     depends_on:
