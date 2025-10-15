@@ -49,3 +49,9 @@ class BookService:
         book_exists = self.repository.delete_book(book_id)
         if not book_exists:
             raise exceptions.BookNotFoundError(book_id=book_id)
+
+    def get_average_price_by_year(self, year: int) -> float:
+        average_price = self.repository.get_average_price_by_year(year)
+        if average_price is None:
+            raise exceptions.BooksArentNotFound()
+        return average_price

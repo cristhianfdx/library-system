@@ -56,3 +56,15 @@ class BookRepository(ABC):
         Returns:
             bool: True if the book was successfully deleted, False otherwise
         """
+
+    @abstractmethod
+    def get_average_price_by_year(self, year: int) -> float | None:
+        """Calculates the average price of books published in a given year.
+
+        Args:
+            year (int): The publication year to filter books.
+
+        Returns:
+            float | None: The average price of books for the specified year,
+                          or None if no books are found.
+        """

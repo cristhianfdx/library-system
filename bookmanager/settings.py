@@ -1,11 +1,12 @@
+import os
 from datetime import timedelta
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = "tu-clave-secreta"
+SECRET_KEY = os.getenv("SECRET_KEY", "SECRET_KEY")
+DEBUG = os.getenv("DEBUG", True)
 ROOT_URLCONF = "bookmanager.urls"
-DEBUG = True
 ALLOWED_HOSTS = []
 
 # ------------------------------

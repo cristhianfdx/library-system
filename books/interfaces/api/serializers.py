@@ -19,6 +19,10 @@ class UpdateBookRequest(serializers.Serializer):
     price = serializers.FloatField(required=False)
 
 
+class GetAveragePriceRequest(serializers.Serializer):
+    year = serializers.IntegerField(min_value=1900, max_value=2100)
+
+
 # RESPONSE
 
 
@@ -45,6 +49,10 @@ class CreateBookResponse(BookResponse): ...
 
 
 class UpdateBookResponse(BookResponse): ...
+
+
+class GetAveragePriceResponse(serializers.Serializer):
+    average_price = serializers.FloatField()
 
 
 class ErrorResponse(serializers.Serializer):

@@ -52,6 +52,20 @@ class MongoBookRepository(BookRepository):
         res = self.collection.delete_one({"_id": ObjectId(book_id)})
         return res.deleted_count > 0
 
+    def get_average_price_by_year(self, year: int) -> float | None:
+        start = f"{year:04d}-01-01"
+        end = f"{year + 1:04d}-01-01"
+
+        pipeline = [
+            {"$match": {"published_date": {"$gte": start, "$lt": end}}},
+            {"$group": {"_id": None, "average_price": {"$avg": "$price"}}},
+        ]
+
+        result = list(self.collection.aggregate(pipeline))
+        if result and "average_price" in result[0]:
+            return result[0]["average_price"]
+        return None
+
     def _map_book(self, doc: Collection) -> Book:
         return Book(id=str(doc["_id"]), **{k: v for k, v in doc.items() if k != "_id"})
 

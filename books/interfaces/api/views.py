@@ -245,3 +245,42 @@ class BookDetailAPIView(_BookAPIView):
     def delete(self, _: Request, book_id: str) -> Response:
         self.service.delete_book(book_id)
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class AveragePriceAPIView(_BookAPIView):
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(
+                name="year",
+                type=int,
+                location=OpenApiParameter.QUERY,
+                description="Año",
+                required=True,
+            )
+        ],
+        responses={
+            200: serializers.GetAveragePriceResponse,
+            404: OpenApiResponse(
+                response=serializers.ErrorResponse,
+                description="Libros no encontrados para el año.",
+                examples=[
+                    OpenApiExample(
+                        "No encontrado", value={"detail": "Libros no encontrados"}
+                    )
+                ],
+            ),
+        },
+        description="Obtiene el promedio de precio de los libros publicados en un año especifico.",
+    )
+    def get(self, request: Request) -> Response:
+        print(request)
+        serializer = serializers.GetAveragePriceRequest(data=request.query_params)
+        serializer.is_valid(raise_exception=True)
+
+        year = serializer.validated_data["year"]
+        average_price = self.service.get_average_price_by_year(year)
+
+        response_serializer = serializers.GetAveragePriceResponse(
+            {"average_price": average_price}
+        )
+        return Response(response_serializer.data, status=status.HTTP_200_OK)

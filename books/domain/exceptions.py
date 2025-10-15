@@ -17,6 +17,6 @@ class BookAlreadyExistsError(BookException):
         super().__init__(f"Ya existe un libro con el título '{title}'.")
 
 
-class InvalidBookDataError(BookException):
-    def __init__(self, details: str = "Datos inválidos para el libro."):
+class BooksArentNotFound(BookException):
+    def __init__(self, details: str = "No hay libros creados."):
         super().__init__(details)

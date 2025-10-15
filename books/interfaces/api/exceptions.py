@@ -23,7 +23,7 @@ def custom_exception_handler(exc, context):
         serializer.is_valid(raise_exception=False)
         return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
 
-    if isinstance(exc, exceptions.BookNotFoundError):
+    if isinstance(exc, exceptions.BookNotFoundError | exceptions.BooksArentNotFound):
         serializer = serializers.ErrorResponse(data={"detail": str(exc)})
         serializer.is_valid(raise_exception=False)
         return Response(serializer.data, status=status.HTTP_404_NOT_FOUND)
