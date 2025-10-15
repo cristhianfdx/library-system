@@ -1,8 +1,10 @@
 import os
 import random
 from datetime import datetime
+from time import sleep
 
 from django.db import migrations
+from pymongo.errors import ServerSelectionTimeoutError
 from pymongo import MongoClient
 
 
@@ -12,8 +14,23 @@ def seed_books_mongo(apps, schema_editor):
     Uses environment variables for connection details.
     """
 
-    mongo_uri = os.getenv("MONGO_URI", "mongodb://localhost:27017")
+    print("seed_books_mongo...")
+    mongo_uri = os.getenv("MONGO_URI", "mongodb://mongo:27017")
     mongo_db_name = os.getenv("MONGO_DB_NAME", "bookmanager")
+
+    max_retries = 10
+    for attempt in range(max_retries):
+        try:
+            client = MongoClient(mongo_uri, serverSelectionTimeoutMS=5000)
+            client.server_info()  # force connection
+            break
+        except ServerSelectionTimeoutError:
+            print(
+                f"MongoDB not available, attempt {attempt+1}/{max_retries}. Waiting 5s..."
+            )
+            sleep(5)
+    else:
+        raise Exception("Could not connect to MongoDB after several attempts")
 
     try:
         client = MongoClient(mongo_uri)
@@ -155,7 +172,7 @@ def remove_books_mongo(apps, schema_editor):
     Removes all documents from the 'books' collection.
     Used for rollback.
     """
-    mongo_uri = os.getenv("MONGO_URI", "mongodb://localhost:27017")
+    mongo_uri = os.getenv("MONGO_URI", "mongodb://mongo:27017")
     mongo_db_name = os.getenv("MONGO_DB_NAME", "bookmanager")
 
     try:

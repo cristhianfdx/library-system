@@ -1,21 +1,21 @@
 version: "3.8"
 
 services:
-  #web:
-  #  build: .
-  #  container_name: django_app
-  #  command: >
-  #    sh -c "python manage.py migrate &&
-  #      python manage.py runserver 0.0.0.0:8000"
-  #  volumes:
-  #    - .:/app
-  #  ports:
-  #    - "8000:8000"
-  #  depends_on:
-  #    mongo:
-  #      condition: service_healthy
-  #  networks:
-  #    - booknet
+  web:
+    build: .
+    container_name: django_app
+    command: >
+      sh -c "python manage.py migrate &&
+        python manage.py runserver 0.0.0.0:8080"
+    volumes:
+      - .:/app
+    ports:
+      - "8080:8080"
+    depends_on:
+      mongo:
+        condition: service_healthy
+    networks:
+      - booknet
 
   mongo:
     image: mongo:6.0
@@ -31,7 +31,7 @@ services:
       test: ["CMD-SHELL", "mongosh --eval 'db.adminCommand(\"ping\")' || exit 1"]
       interval: 5s
       timeout: 5s
-      retries: 5
+      retries: 6
 
   mongo-express:
     image: mongo-express:latest
