@@ -1,0 +1,1363 @@
+{
+	"info": {
+		"_postman_id": "cc018c99-76bb-4a3e-b14d-92a91f256c2e",
+		"name": "Book Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12878941"
+	},
+	"item": [
+		{
+			"name": "Get Books",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/api/books?page=1",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"books"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Books OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/books?page=1",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"books"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "vary",
+							"value": "Accept"
+						},
+						{
+							"key": "allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "DENY"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "cross-origin-opener-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "x-cloud-trace-context",
+							"value": "b5c12f8fbe287cc5f6bd8bb1fe3889fc"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 15 Oct 2025 03:44:32 GMT"
+						},
+						{
+							"key": "server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1734"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 50,\n    \"page_size\": 10,\n    \"current_page\": 1,\n    \"total_pages\": 5,\n    \"next\": \"http://bookmanager-1066120442183.us-central1.run.app/api/books/?page=2\",\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": \"68ef1800497c110bccfff011\",\n            \"title\": \"Clean Code\",\n            \"author\": \"Martin Fowler\",\n            \"published_date\": \"1997-04-25\",\n            \"genre\": \"Machine Learning\",\n            \"price\": 137.61\n        },\n        {\n            \"id\": \"68ef1800497c110bccfff012\",\n            \"title\": \"The Pragmatic Programmer\",\n            \"author\": \"Kyle Simpson\",\n            \"published_date\": \"2003-08-24\",\n            \"genre\": \"Machine Learning\",\n            \"price\": 32.48\n        },\n        {\n            \"id\": \"68ef1800497c110bccfff013\",\n            \"title\": \"Design Patterns\",\n            \"author\": \"Marijn Haverbeke\",\n            \"published_date\": \"2022-11-26\",\n            \"genre\": \"Computer Science\",\n            \"price\": 101.1\n        },\n        {\n            \"id\": \"68ef1800497c110bccfff014\",\n            \"title\": \"Refactoring\",\n            \"author\": \"Alan Beaulieu\",\n            \"published_date\": \"2005-02-20\",\n            \"genre\": \"Web Development\",\n            \"price\": 70.09\n        },\n        {\n            \"id\": \"68ef1800497c110bccfff015\",\n            \"title\": \"Domain-Driven Design\",\n            \"author\": \"Thomas Cormen\",\n            \"published_date\": \"2009-12-22\",\n            \"genre\": \"Web Development\",\n            \"price\": 13.22\n        },\n        {\n            \"id\": \"68ef1800497c110bccfff016\",\n            \"title\": \"Code Complete\",\n            \"author\": \"Steve McConnell\",\n            \"published_date\": \"2003-06-21\",\n            \"genre\": \"Software Engineering\",\n            \"price\": 49.78\n        },\n        {\n            \"id\": \"68ef1800497c110bccfff017\",\n            \"title\": \"Effective Java\",\n            \"author\": \"Harold Abelson\",\n            \"published_date\": \"1990-12-10\",\n            \"genre\": \"Computer Science\",\n            \"price\": 115.66\n        },\n        {\n            \"id\": \"68ef1800497c110bccfff018\",\n            \"title\": \"Python Crash Course\",\n            \"author\": \"Aurélien Géron\",\n            \"published_date\": \"2005-09-11\",\n            \"genre\": \"DevOps\",\n            \"price\": 27.42\n        },\n        {\n            \"id\": \"68ef1800497c110bccfff019\",\n            \"title\": \"Fluent Python\",\n            \"author\": \"Aurélien Géron\",\n            \"published_date\": \"1990-11-26\",\n            \"genre\": \"Algorithms\",\n            \"price\": 75.32\n        },\n        {\n            \"id\": \"68ef1800497c110bccfff01a\",\n            \"title\": \"Automate the Boring Stuff\",\n            \"author\": \"Joshua Bloch\",\n            \"published_date\": \"2022-06-19\",\n            \"genre\": \"Databases\",\n            \"price\": 132.63\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Book by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/api/books/:book_id/",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"books",
+						":book_id",
+						""
+					],
+					"variable": [
+						{
+							"key": "book_id",
+							"value": "68ef1800497c110bccfff011"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Book by ID 401",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/books/:book_id/",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								":book_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "book_id",
+									"value": "68eee29828f3c60ebca52462"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 15 Oct 2025 00:47:13 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "WWW-Authenticate",
+							"value": "Bearer realm=\"api\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "184"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"El token dado no es valido para ningun tipo de token\",\n    \"code\": \"token_not_valid\",\n    \"messages\": [\n        {\n            \"token_class\": \"AccessToken\",\n            \"token_type\": \"access\",\n            \"message\": \"Token is expired\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Get Book by ID Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/books/:book_id/",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								":book_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "book_id",
+									"value": "68eee29828f3c60ebca52462"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "vary",
+							"value": "Accept"
+						},
+						{
+							"key": "allow",
+							"value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "DENY"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "cross-origin-opener-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "x-cloud-trace-context",
+							"value": "7c023b68e8bcde42898571b67cb55ba4;o=1"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 15 Oct 2025 03:47:33 GMT"
+						},
+						{
+							"key": "server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Content-Length",
+							"value": "66"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"El libro con id '68eee29828f3c60ebca52462' no existe.\"\n}"
+				},
+				{
+					"name": "Get Book by ID OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/books/:book_id/",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								":book_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "book_id",
+									"value": "68ef1800497c110bccfff011"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "vary",
+							"value": "Accept"
+						},
+						{
+							"key": "allow",
+							"value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "DENY"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "cross-origin-opener-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "x-cloud-trace-context",
+							"value": "48e11a7e6a7e28c914181b34c61b0775;o=1"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 15 Oct 2025 03:47:57 GMT"
+						},
+						{
+							"key": "server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Content-Length",
+							"value": "151"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"68ef1800497c110bccfff011\",\n    \"title\": \"Clean Code\",\n    \"author\": \"Martin Fowler\",\n    \"published_date\": \"1997-04-25\",\n    \"genre\": \"Machine Learning\",\n    \"price\": 137.61\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Book by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/api/books/:book_id/",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"books",
+						":book_id",
+						""
+					],
+					"variable": [
+						{
+							"key": "book_id",
+							"value": "68ef1800497c110bccfff011"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Book by ID OK",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/books/:book_id/",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								":book_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "book_id",
+									"value": "68ef1800497c110bccfff011"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "vary",
+							"value": "Accept"
+						},
+						{
+							"key": "allow",
+							"value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "DENY"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "cross-origin-opener-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "x-cloud-trace-context",
+							"value": "b47a5779d350a503033cd58cd7aef7a1;o=1"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 15 Oct 2025 03:48:30 GMT"
+						},
+						{
+							"key": "content-type",
+							"value": "text/html"
+						},
+						{
+							"key": "server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Delete Book by ID Not Found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/books/:book_id/",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								":book_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "book_id",
+									"value": "68ef1800497c110bccfff011"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "vary",
+							"value": "Accept"
+						},
+						{
+							"key": "allow",
+							"value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "DENY"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "cross-origin-opener-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "x-cloud-trace-context",
+							"value": "93843e0a9007237ff5b207fb5b89b989;o=1"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 15 Oct 2025 03:49:01 GMT"
+						},
+						{
+							"key": "server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Content-Length",
+							"value": "66"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"El libro con id '68ef1800497c110bccfff011' no existe.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Clean Code\",\r\n    \"author\": \"Alan Beaulieu\",\r\n    \"published_date\": \"2016-06-03\",\r\n    \"genre\": \"Web Development\",\r\n    \"price\": 137.2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/api/books/",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"books",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Book OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Clean Code\",\r\n    \"author\": \"Alan Beaulieu\",\r\n    \"published_date\": \"2016-06-03\",\r\n    \"genre\": \"Web Development\",\r\n    \"price\": 137.2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/api/books/",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "vary",
+							"value": "Accept"
+						},
+						{
+							"key": "allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "DENY"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "cross-origin-opener-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "x-cloud-trace-context",
+							"value": "372b7dd0a5e9fca8f18df0e10897f5b0;o=1"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 15 Oct 2025 03:49:43 GMT"
+						},
+						{
+							"key": "server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Content-Length",
+							"value": "149"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"68ef19d7953acc5005bf1022\",\n    \"title\": \"Clean Code\",\n    \"author\": \"Alan Beaulieu\",\n    \"published_date\": \"2016-06-03\",\n    \"genre\": \"Web Development\",\n    \"price\": 137.2\n}"
+				},
+				{
+					"name": "Create Book if already title exists",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Clean Code\",\r\n    \"author\": \"Alan Beaulieu\",\r\n    \"published_date\": \"2016-06-03\",\r\n    \"genre\": \"Web Development\",\r\n    \"price\": 137.2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/api/books/",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								""
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "vary",
+							"value": "Accept"
+						},
+						{
+							"key": "allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "DENY"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "cross-origin-opener-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "x-cloud-trace-context",
+							"value": "3dd97aca8bc5f3eb8cfdcedbfc7aef34;o=1"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 15 Oct 2025 03:50:00 GMT"
+						},
+						{
+							"key": "server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Content-Length",
+							"value": "60"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Ya existe un libro con el título 'Clean Code'.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\": \"Alan Beaulieu\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/api/books/:book_id/",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"books",
+						":book_id",
+						""
+					],
+					"variable": [
+						{
+							"key": "book_id",
+							"value": "68ef1800497c110bccfff013"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Book Not Exists",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author\": \"Alan Beaulieu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/api/books/:book_id/",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								":book_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "book_id",
+									"value": "68eee29828f3c60ebca52462"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "vary",
+							"value": "Accept"
+						},
+						{
+							"key": "allow",
+							"value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "DENY"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "cross-origin-opener-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "x-cloud-trace-context",
+							"value": "c0ae4fcadbb7e50c396860f3192abe76;o=1"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 15 Oct 2025 03:50:34 GMT"
+						},
+						{
+							"key": "server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Content-Length",
+							"value": "66"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"El libro con id '68eee29828f3c60ebca52462' no existe.\"\n}"
+				},
+				{
+					"name": "Update Book OK",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author\": \"Alan Beaulieu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/api/books/:book_id/",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								":book_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "book_id",
+									"value": "68ef1800497c110bccfff013"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "vary",
+							"value": "Accept"
+						},
+						{
+							"key": "allow",
+							"value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "DENY"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "cross-origin-opener-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "x-cloud-trace-context",
+							"value": "b05ff8e1c5a5127340efb2da7d891aa9;o=1"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 15 Oct 2025 03:51:01 GMT"
+						},
+						{
+							"key": "server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Content-Length",
+							"value": "155"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"68ef1800497c110bccfff013\",\n    \"title\": \"Design Patterns\",\n    \"author\": \"Alan Beaulieu\",\n    \"published_date\": \"2022-11-26\",\n    \"genre\": \"Computer Science\",\n    \"price\": 101.1\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();\r",
+							"pm.environment.set(\"access_token\", jsonData.access);"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"{{username}}\",\r\n    \"password\": \"{{password}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/api/token/",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Average Price by Year",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{api_url}}/api/books/average-price?year=2005",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"books",
+						"average-price"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2005"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl -X 'GET' \\\r\n  'http://localhost:8000/api/books/books/average-price/' \\\r\n  -H 'accept: application/json'"
+			},
+			"response": [
+				{
+					"name": "Get Average Price by Year OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/api/books/average-price?year=2005",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"average-price"
+							],
+							"query": [
+								{
+									"key": "year",
+									"value": "2005"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "vary",
+							"value": "Accept"
+						},
+						{
+							"key": "allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "DENY"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "cross-origin-opener-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "x-cloud-trace-context",
+							"value": "2b029ef3c922b8edab9d4a9ff130cc47"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 15 Oct 2025 03:51:28 GMT"
+						},
+						{
+							"key": "server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Content-Length",
+							"value": "25"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"average_price\": 66.6275\n}"
+				},
+				{
+					"name": "Get Average Price by Year Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/api/books/average-price?year=2100",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"average-price"
+							],
+							"query": [
+								{
+									"key": "year",
+									"value": "2100"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "vary",
+							"value": "Accept"
+						},
+						{
+							"key": "allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "DENY"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "cross-origin-opener-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "x-cloud-trace-context",
+							"value": "308da72a19341cdb79bf4c43fc5bfa0b"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 15 Oct 2025 03:51:51 GMT"
+						},
+						{
+							"key": "server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Content-Length",
+							"value": "35"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"No hay libros creados.\"\n}"
+				},
+				{
+					"name": "Get Average Price by Year Bad Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/api/books/average-price?year=3000",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"average-price"
+							],
+							"query": [
+								{
+									"key": "year",
+									"value": "3000"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "vary",
+							"value": "Accept"
+						},
+						{
+							"key": "allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "DENY"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "cross-origin-opener-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "x-cloud-trace-context",
+							"value": "c830e61c5cf0c4f97add87b792eb111e"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 15 Oct 2025 03:52:13 GMT"
+						},
+						{
+							"key": "server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Content-Length",
+							"value": "66"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"year\": [\n        \"Asegúrese de que este valor es menor o igual a 2100.\"\n    ]\n}"
+				}
+			]
+		}
+	]
+}

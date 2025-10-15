@@ -4,8 +4,8 @@ from datetime import datetime
 from time import sleep
 
 from django.db import migrations
-from pymongo.errors import ServerSelectionTimeoutError
 from pymongo import MongoClient
+from pymongo.errors import ServerSelectionTimeoutError
 
 
 def seed_books_mongo(apps, schema_editor):
