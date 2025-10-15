@@ -1,0 +1,29 @@
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+skip-string-normalization = false
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | migrations
+  | __pycache__
+)/
+'''
+
+[tool.ruff]
+line-length = 88
+select = [
+    "E",  # pycodestyle errors
+    "F",  # pyflakes
+    "I",  # import order
+    "B",  # bugbear
+    "UP", # upgrade checks (pyupgrade)
+]
+ignore = ["E501", "B904"]
+target-version = "py312"
+exclude = ["migrations", ".venv"]
+
+[tool.ruff.isort]
+known-first-party = ["bookmanager", "books", "users"]
+combine-as-imports = true
