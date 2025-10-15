@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY", "SECRET_KEY")
 DEBUG = os.getenv("DEBUG", True)
 ROOT_URLCONF = "bookmanager.urls"
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 # ------------------------------
 # APPS
